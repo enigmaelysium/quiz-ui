@@ -65,8 +65,8 @@ const data = {
       },
     ],
     passingScore: 2,
-    time: 9,
-    // time: 480,
+    //time: 9,
+    time: 480,
     intro: `<div class="px-3">
     <h1 class="mt-5">Onderdeel 2: Kennis</h1>
     <hr class="my-3">
@@ -104,8 +104,8 @@ const data = {
       },
     ],
     passingScore: 2,
-    time:9 ,
-    // time:960 ,
+    //time:9 ,
+    time:960 ,
     intro: `<div class="px-3">
     <h1 class="mt-5">Onderdeel 3: Inzicht</h1>
     <hr class="my-3">
