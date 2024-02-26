@@ -908,11 +908,10 @@ label > span {
 
 .page-4{
   width: 100%;
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 80px;
+  margin: 20px 10px;
 }
 
 .page-4-1{
@@ -937,7 +936,8 @@ hr{
   width: 100%;
 }
 .correct{
-  width: 20vw;
+  /* width: 20vw; */
+  display: flex;
 }
 
 
@@ -1048,7 +1048,7 @@ hr{
 .page-4-2{
   width: 52%;
 }
-.correct{width: auto;}
+.correct{width: auto; display: block;}
 }
 @media (max-width: 500px) {
   .page-2 {
@@ -1090,7 +1090,7 @@ hr{
   .correct>img {
     width: 80vw;
   }  
-  .correct{width: auto;}
+  .correct{width: auto; display: block;}
 
   .page-4{
     width: auto;

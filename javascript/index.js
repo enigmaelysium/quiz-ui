@@ -1,5 +1,5 @@
 const data = {
-  A: {
+  Gevaarherkenning: {
     content: [
       {
         question: "What should you do?0",
@@ -43,7 +43,7 @@ const data = {
     correctCount: 0,
     wrongCount: 0,
   },
-  B: {
+  Kennis: {
     content: [
       {
         question: "What is the capital of France?3",
@@ -65,9 +65,10 @@ const data = {
       },
     ],
     passingScore: 2,
-    time: 20,
+    time: 9,
+    // time: 480,
     intro: `<div class="px-3">
-    <h1 class="mt-5">Onderdeel 1: Gevaarherkenning</h1>
+    <h1 class="mt-5">Onderdeel 2: Kennis</h1>
     <hr class="my-3">
     <p class="lead">Dit onderdeel gaat over het herkennen van gevaar en wat je
         moet doen in een situatie. <br>Dit onderdeel bestaat uit 25 vragen,
@@ -81,7 +82,7 @@ const data = {
     correctCount: 0,
     wrongCount: 0,
   },
-  C: {
+  Inzicht: {
     content: [
       {
         question: "What is the chemical symbol for water?6",
@@ -103,9 +104,10 @@ const data = {
       },
     ],
     passingScore: 2,
-    time: 10,
+    time:9 ,
+    // time:960 ,
     intro: `<div class="px-3">
-    <h1 class="mt-5">Onderdeel 1: Gevaarherkenning</h1>
+    <h1 class="mt-5">Onderdeel 3: Inzicht</h1>
     <hr class="my-3">
     <p class="lead">Dit onderdeel gaat over het herkennen van gevaar en wat je
         moet doen in een situatie. <br>Dit onderdeel bestaat uit 25 vragen,
@@ -149,7 +151,7 @@ const data = {
 document.addEventListener("DOMContentLoaded", function () {
   let currentPageIndex = 0;
   let currentPagelenght = 0;
-  let currentDataKey = "A";
+  let currentDataKey = Object.keys(data)[0];
   var startquizz;
   var startquizz;
   let timerInterval,
@@ -205,6 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const repeatExamButton = document.querySelector("#repeatExam");
   const nextExamButton = document.querySelector("#nextExam");
   const nextPageButton = document.querySelector("#nextBtn");
+  const exitPageButton = document.querySelector("#exitBtn");
   const backPageRecordbutton = document.querySelector("#recordBack");
   const backPageButton = document.querySelector("#backBtn");
   const counter = document.querySelector("#counter");
@@ -273,6 +276,11 @@ document.addEventListener("DOMContentLoaded", function () {
     populatePageContent();
   });
 
+  exitPageButton.addEventListener("click", function () {
+    window.history.back();
+
+
+  })
   repeatExamButton.addEventListener("click", function () {
     location.reload();
   })
@@ -380,7 +388,6 @@ document.addEventListener("DOMContentLoaded", function () {
       page1.innerHTML = data[currentDataKey].intro;
 
       countTotal.innerHTML = data[currentDataKey].content.length;
-      populatePageContent(1);
       switch (currentDataKey) {
         case "B":
           startquizz = document.querySelector("#startExam2");
@@ -492,11 +499,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <span>${i+1}</span>
       <div class="correct">
       <img src="${element[0].image}" alt="" width="700">
+      <div>
           <h4>${element[0].question}</h4>
           <div>
               <p>Your answer <span class="coorect-answer-span">${element[2]}</span></p>
               <p>The correct answer <span class="coorect-answer-span">${element[1]}</span></p>
           </div>
+        </div>
       </div>
   </div>
       `;
@@ -559,6 +568,13 @@ document.addEventListener("DOMContentLoaded", function () {
           wrongScore += wrongAnswers;
           console.log("wrongScore after : ", wrongScore);
 
+for (let i = 0; i < data[currentDataKey].content.length; i++) {
+  const element = data[currentDataKey].content[i];
+  quizRecordSmall.push([element, data[currentDataKey].content[i].answer, selectedChoice]);
+
+  
+}
+
           currentPageIndex = 0;
           switchToNextData();
         } else {
@@ -571,6 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
           populatePageContent();
           wrongScore++;
           data[currentDataKey].wrongCount++;
+          quizRecordSmall.push([currentQuestion, currentQuestion.answer, selectedChoice]);
           console.log("Wrong choice!", wrongScore);
           // startTimer(data[currentDataKey].time);
         }
