@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 :root {
+  /* --bs-btn-color: ##C5E5F9; */
   --bs-btn-color: #146bff;
   --bs-hover-btn-color: #2773f7;
   --bs-backeground-base-color: #c5e5f9ab;
 }
+
 
 body {
   font-family: Ubuntu, Metropolis, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -51,6 +54,7 @@ body {
 
 .page-2 {
   display: flex;
+  padding: 0 10%;
   /* margin-right: 17%; */
 }
 
@@ -259,6 +263,12 @@ label {
 label:hover {
   border-color: #4062f6;
   background-color: rgba(97, 154, 234, 0.16);
+}
+label {
+  /* border-color: #5b77f38c;
+  background-color: rgba(170, 203, 248, 0.16); */
+  border-color: #bcc6f652;
+  background-color: rgb(196 217 246 / 16%);
 }
 label:before,
 label:after {
@@ -528,6 +538,7 @@ label > span {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 330px;
 }
 
 .button-css {
@@ -717,7 +728,7 @@ label > span {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1.7rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
@@ -738,7 +749,10 @@ label > span {
   transform: translate(5px, 5px);
 }
 .percents{
-  font-family: 'Font Awesome 5 Free', 'Poppins', sans-serif;
+  /* font-family: 'Font Awesome 5 Free', 'Poppins', sans-serif; */
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
 }
 .boxs .cont-ent .percents svg circle:nth-child(2) {
@@ -958,6 +972,7 @@ hr{
 @media (max-width: 900px) {
   .page-2 {
     flex-direction: column;
+    padding: inherit;
   }
 
   .page-2 > img {
@@ -1053,6 +1068,8 @@ hr{
 @media (max-width: 500px) {
   .page-2 {
     flex-direction: column;
+    padding: inherit;
+
   }
 
   .page-2 > img {
@@ -1067,6 +1084,7 @@ hr{
     display: flex;
     flex-direction: column;
     align-content: center;
+    /* width: auto; */
   }
 
   .c-1-1,

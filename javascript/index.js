@@ -546,21 +546,22 @@ for (let i = 0; i < data[currentDataKey].content.length; i++) {
         break;
       }
     }
+    percents.dataset.text = `${num}%`;
 
-    switch (true) {
-      case (num >= 0 && num < 15):
-        percents.dataset.text = 'bad';
-        break;
-      case (num >= 15 && num < 30):
-        percents.dataset.text = 'good';
-        break;
-      case (num >= 30 && num < 45):
-        percents.dataset.text = 'great';
-        break;
-      case (num >= 45 && num <= 100):
-        percents.dataset.text = 'excellent';
-        break;
-    }
+    // switch (true) {
+    //   case (num >= 0 && num < 15):
+    //     percents.dataset.text = 'bad';
+    //     break;
+    //   case (num >= 15 && num < 30):
+    //     percents.dataset.text = 'good';
+    //     break;
+    //   case (num >= 30 && num < 45):
+    //     percents.dataset.text = 'great';
+    //     break;
+    //   case (num >= 45 && num <= 100):
+    //     percents.dataset.text = 'excellent';
+    //     break;
+    // }
     
 
     if (statusOfPassing) {
