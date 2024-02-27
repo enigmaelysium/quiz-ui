@@ -65,8 +65,8 @@ const data = {
       },
     ],
     passingScore: 2,
-    time: 9,
-    // time: 480,
+    // time: 9,
+    time: 480,
     intro: `<div class="px-3">
     <h1 class="mt-5">Onderdeel 2: Kennis</h1>
     <hr class="my-3">
@@ -104,8 +104,8 @@ const data = {
       },
     ],
     passingScore: 2,
-    time:9 ,
-    // time:960 ,
+    // time:9 ,
+    time:960 ,
     intro: `<div class="px-3">
     <h1 class="mt-5">Onderdeel 3: Inzicht</h1>
     <hr class="my-3">
@@ -122,31 +122,6 @@ const data = {
     wrongCount: 0,
   },
 };
-
-// let data = {
-//   A: {
-//     correctCount: 0,
-//     wrongCount: 0,
-//   },
-//   B: {
-//     correctCount: 0,
-//     wrongCount: 0,
-//   },
-//   C: {
-//     correctCount: 0,
-//     wrongCount: 0,
-//   },
-// };
-
-// document.addEventListener('DOMContentLoaded', function() {
-
-// // let infoContainer = document.getElementById('info-page');
-
-// infopage.innerHTML = data.A.intro
-
-// let startAQuiz = document.getElementsByClassName('btns-next-quiz');
-
-// })
 
 document.addEventListener("DOMContentLoaded", function () {
   let currentPageIndex = 0;
@@ -426,12 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
           data[category].passingScore,
         ]);
       }
-      // data.forEach((element,index) => {
-      // console.log('list Element: ', element);
-      // console.log('list index: ', index);
-      //   // listQuestionsScore.push([element.correctCount,])
 
-      // });
 
       loadingData(
         percentage,
@@ -440,24 +410,6 @@ document.addEventListener("DOMContentLoaded", function () {
         listQuestionsScore
       );
 
-      // page1.innerHTML = `<h1>Thank you </h1>
-      //  <br/>
-      //  <h4> Your correct score are : ${corrrectScore} <h4/>
-      //  <br/>
-      //  <h4> Your wrong score are : ${wrongScore} <h4/>
-      //  <br/>
-      //  <h4> Your correct score A are : ${data.A.correctCount}</h4>
-      //  <br/>
-      //  <h4> Your wrong score A are : ${data.A.wrongCount}</h4>
-      //  <br/>
-      //  <h4> Your correct score B are : ${data.B.correctCount}</h4>
-      //  <br/>
-      //  <h4> Your wrong score B are : ${data.B.wrongCount}</h4>
-      //  <br/>
-      //  <h4> Your correct score C are : ${data.C.correctCount}</h4>
-      //  <br/>
-      //  <h4> Your wrong score C are : ${data.C.wrongCount}</h4>`;
-      // console.log("All data finished");
     }
   }
 
@@ -652,15 +604,6 @@ for (let i = 0; i < data[currentDataKey].content.length; i++) {
         break;
     }
     
-    // for (let i = 0; i < counterCounter.length; i++) {
-    //   const element = counterCounter[i];
-    //   if (element[1] >= element[3]) {
-    //     statusOfPassing = true
-    //   }else{
-    //     statusOfPassing = false
-    //   }
-
-    // }
 
     if (statusOfPassing) {
       console.log("goooof");
@@ -735,13 +678,6 @@ for (let i = 0; i < data[currentDataKey].content.length; i++) {
         data[category].passingScore,
       ]);
     }
-    // data.forEach((element,index) => {
-    // console.log('list Element: ', element);
-    // console.log('list index: ', index);
-    //   // listQuestionsScore.push([element.correctCount,])
-
-    // });
-
     loadingData(percentage, corrrectScore, totalQuestions, listQuestionsScore);
   }
 });
