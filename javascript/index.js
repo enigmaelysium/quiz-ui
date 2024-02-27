@@ -139,46 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
     dataScrore;
   let quizRecord = [];
   let quizRecordSmall = [];
-  // blabla()
-  // let datttt = 
-  //   {
-  //     B: [
-  //       [
-  //         {
-  //           question: "What should you do?1",
-  //           choices: ["brake", "let off the gas", "do nothing"],
-  //           answer: "brake",
-  //           image: "assets/2022-bmw-x5-black-vermilion.jpg",
-  //         },
-  //         "brake",
-  //         "let off the gas",
-  //       ],
-  //       [
-  //         {
-  //           question: "What should you do?2",
-  //           choices: ["brake", "let off the gas", "do nothing"],
-  //           answer: "brake",
-  //           image: "assets/2022-bmw-x5-black-vermilion.jpg",
-  //         },
-  //         "brake",
-  //         "let off the gas",
-  //       ],
-  //       [
-  //         {
-  //           question: "What should you do?3",
-  //           choices: ["brake", "let off the gas", "do nothing"],
-  //           answer: "brake",
-  //           image: "assets/2022-bmw-x5-black-vermilion.jpg",
-  //         },
-  //         "brake",
-  //         "let off the gas",
-  //       ],
-  //     ],
-  //   }
-  // ;
-  // loadingChoices(datttt);
+
   showFirst();
-  //   populatePageContent();
   const repeatExamButton = document.querySelector("#repeatExam");
   const nextExamButton = document.querySelector("#nextExam");
   const nextPageButton = document.querySelector("#nextBtn");
@@ -262,13 +224,11 @@ document.addEventListener("DOMContentLoaded", function () {
   nextExamButton.addEventListener("click", function () {
     window.location.href = "https://www.example.com"; // Replace "https://www.example.com" with your desired URL
   })
-
   viewMore.forEach((button,index) => {
     button.addEventListener("click", function() {
       loadingChoices(quizRecord[index])
     });
   });
-
   backPageRecordbutton.addEventListener("click", function () {
 
     const page3 = document.querySelector(".page-3");
@@ -276,8 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
     page3.classList.toggle("hide");
     page4.classList.toggle("hide");
   })
-  
-
   backPageButton.addEventListener("click", function () {
     if (currentPageIndex > 0) {
       // Event listener for user's choice selection
